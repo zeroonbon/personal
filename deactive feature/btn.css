@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* ##################################################################################################### */
+/* mouse-scroll-btn */
+/* ##################################################################################################### */
+
+* {
+    font-family: 'Poppins', Tahoma ,sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --col-1: lavender;
+}
+a.scroll-btn {
+    z-index: 1;
+    position: absolute;
+    height: 10em;
+    width: 6.2em;
+    border: 0.5em solid var(--col-1);
+    border-radius: 3em;
+    font-size: 5px;
+    transition: all 3s ease-in-out;
+    opacity: 0.8;
+}
+
+a.scroll-btn::before {
+    position: absolute;
+    content: "";
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 1.2em;
+    height: 1.2em;
+    width: 1.2em;
+    background: var(--col-1);
+    border-radius: 50%;
+}
+
+a.up::before {animation: move-up 2s infinite;}
+@keyframes move-up {
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-5.3em);
+        opacity: 0;
+    }
+}
+a.down::before {animation: move-down 2s infinite; top: -4em;}
+@keyframes move-down {
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(5.3em);
+        opacity: 0;
+    }
+}
+
+a.scroll-btn::after {
+    position: absolute;
+    content: "SCROLL UP";
+    width: 12em;
+    display: block;
+    width: 12em;
+    text-align: center;
+    left: -4.2em;
+    bottom: -2.5em;
+    font-size: 1.6em;
+    color: var(--col-1);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+a.up {
+    /* display: none; */
+    z-index: 10; right: 55px; top: 70px; font-size: 3.5px;
+}
+a.down {
+    /* display: none; */
+    z-index: 10; right: 55px; bottom: 70px; font-size: 3.5px;
+}
+a.down::after {
+    position: absolute;
+    content: "SCROLL DOWN";
+    width: 14em;
+    left: -5.2em;
+}
+
+@media only screen and (max-width:700px) {
+    a.up {
+        display: flex;
+        font-size: 3px;
+        left: 50%;
+        bottom: 50px;
+        transform: translateY(25px);
+    }
+    a.down {
+        display: none;
+    }
+}
+
+:root {
+    --bg-1: radial-gradient(#0f172a, #0f1930, #0f1930);
+}
+/* 
+main:not(:target) a#scroll-btn {
+    visibility: visible;
+} */

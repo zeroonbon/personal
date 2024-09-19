@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* ##################################################################################################### */
+/* scroll snap */
+/* ##################################################################################################### */
+
+* {
+    font-family: 'Poppins', Tahoma ,sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    overflow: none;
+}
+
+body, main, section {overflow-x: hidden;}
+
+main {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    /* -webkit-overflow-scrolling: touch; */
+}
+
+main > section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* ##################################################################################################### */
+/* main, body, header */
+/* ##################################################################################################### */
+:root {
+    --bg-1: radial-gradient(#0f172a, #0f1930, #0f1930);
+    --bg-2: radial-gradient(#0f1930, #0f1930, #0f172a);
+    --bg-3: #1a2642;
+    --col-1: lavender;
+    --op-1: 65%;
+    --op-2: 80%;
+    --op-3: 100%;
+}
+main {
+    background: var(--bg-1);
+}
+
+h1, h2, h3, h4, h5, h6, p, div, a{
+    color: var(--col-1);
+    width: 100%;
+}
+
+h2 {overflow: hidden;}
+/* h4 {text-align: justify;} */
+.s1-container h4 {text-align: left;}
+span {
+    opacity: var(--op-3);
+    color: white;
+}
+
+#desktop-mobile {
+    display: none;
+}
+
+/* ##################################################################################################### */
+/* header */
+.header {
+    height: 50px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: z-index 0.3s;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+
+#header-1 {position: fixed;z-index: 1;}
+#header-2 {z-index: 2;background: none;backdrop-filter: none;position: static;}
+#header-3 {z-index: 3;background: none;backdrop-filter: none;position: static;}
+#header-4 {z-index: 4;background: none;backdrop-filter: none;position: static;}
+#header-5 {z-index: 5;background: none;backdrop-filter: none;position: static;}
+#header-6 {z-index: 6;background: none;backdrop-filter: none;position: static;}
+section {z-index: 0;}
+
+/* ##################################################################################################### */
+/* section */
+/* ##################################################################################################### */
+/* section-1 */
+.s1-container, .s2-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.profil, .profil-image, .about {
+    height: 80%;
+}
+.profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+.profil > h1 {font-size: 3rem;}
+.profil > h2 {font-size: 1.2rem; opacity: var(--op-2); height: 40px;}
+.profil > h4{font-size: 1rem; opacity: var(--op-1); height: 50px;}
+
+.s1-nav {
+    height: 120px;
+    width: 100%;
+    margin: auto 0px;
+    display: grid;
+    flex-direction: column;
+}
+.s1-nav a {
+    opacity: 65%;
+    transition: all 0.5s ease-in-out;
+}
+.s1-nav a::before {content: "---";}
+.s1-nav > a:hover, .s1-nav a:hover::before {
+    opacity: var(--op-3);
+    content: "-----";
+}
+.profil-nav i {opacity: var(--op-2);margin-right: 20px;}
+.profil-nav i:hover {opacity: var(--op-3);}
+
+.profil-image img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+/* ##################################################################################################### */
+/* section-2 */
+.s2-container,
+.s3-container,
+.s4-container,
+.s5-container {
+    height: 100vh;
+    width: 100%;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 100%;
+    overflow-y: hidden;
+}
+.s2-container .header,
+.s3-container .header,
+.s4-container .header,
+.s5-container .header,
+.container, .container-2, .container-3 {grid-column: span 2;}
+
+.container {
+    height: 100%;
+    width: 100%;
+    margin-top: -95px;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.icon-language i {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+.icon-language i:hover {
+    color: red;
+    opacity: 0.8;
+}
+
+/* ##################################################################################################### */
+/* section-3 */
+.container-2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wrapper {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 28%);
+    padding: 15px 0;
+}
+
+.wrapper-box {
+    display: grid;
+    grid-template-columns: 22% 78%;
+}
+.wrapper-box h1 {
+    width: 100%;
+    height: 100%;
+    opacity: var(--op-2);
+    float: left;
+}
+.box-item {
+    width: 100%;
+    height: 100%;
+}
+.box-item h3 {
+    opacity: 0.95;
+}
+.box-item button {
+    border: none;
+    border-radius: 10px;
+    padding: 1px 8px;
+    margin-right: 10px;
+    color: cyan;
+    background: rgba(0, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+.box-item button:hover {
+    color: cyan;
+    background: rgba(0, 255, 255, 0.6);
+}
+.box-item h4 {
+    opacity: var(--op-2);
+    margin-bottom: 10px;
+}
+#exp {
+    cursor: pointer;
+    opacity: var(--op-2);
+}
+#exp i {
+    rotate: -45deg;
+    transition: all 0.3s ease;
+}
+#exp:hover {
+    opacity: var(--op-3);
+}
+#exp:hover i {
+    transform: translate(8px, -2px);
+}
+
+/* ##################################################################################################### */
+/* section-4 */
+.container-3 {
+    width: 100%;
+    height: 80%;
+    padding: 50px 5% 0% 5%;
+    display: flex;
+    gap: 5%;
+    justify-content: left;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+.card {
+    width: 250px;
+    height: 85%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-3);
+    overflow: hidden;
+    user-select: none;
+}
+
+.thumb {
+    height: 40%;
+}
+.thumb img {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    height: 60%;
+    overflow: hidden;
+    padding: 5px 10px;
+}
+.content h2 {
+    display: flex;
+    height: 35px;
+    overflow: hidden;
+    opacity: 0.95;
+}
+.content p {
+    font-size: 1rem;
+    height: 65%;
+    overflow: hidden;
+    opacity: var(--op-2);
+}
+.content a {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 8%;
+}
+
+.card {
+    grid-row: span 4;
+    grid-column: span 1;
+}
+.hidden-desktop {
+    display: none;
+}
+
+/* ##################################################################################################### */
+/* section-5 */
+.s5-container .container {
+    margin-top: 0px;
+    padding-bottom: 8%;
+}
+
+.s5-container .profil-image, .s5-container .profil {
+    height: 94%;
+    padding-bottom: 15px;
+
+    /* border: 1px solid; */
+}
+.s5-container .container .profil {padding: 5% 5%;}
+.s5-container .profil-nav {margin: 20px 0;}
+.s5-container h2 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    overflow: visible;
+}
+.s5-container h4 {
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 3px 0 2px 0;
+
+    /* border: 1px solid; */
+}
+.s5-container h4 i {padding: 5px; width: 30px;}
+.s5-container #copyright {display: block; width: 80%; margin-right: 20%; text-align: center;}
+.s5-container > label {
+    width: 100%;
+    display: flex;
+    border: 1px solid;
+}
+.s5-container textarea {
+    width: 80%;
+    height: 100px;
+    margin-top: 5px;
+    font-family: 'Poppins', Tahoma ,sans-serif;
+    background-color: var(--bg-1);
+    color: lavender;
+    border: 1px solid lavender;
+    border-radius: 5px;
+    opacity: var(--op-1);
+    overflow: hidden;
+    padding: 2px 10px 2px 5px;
+}
+textarea:focus {
+    background-color: var(--bg-3);
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+    opacity: var(--op-3);
+}
+.s5-container button {
+    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 1rem;
+    background-color: #26d367;
+    border-radius: 8px;
+    border: none;
+    color: lavender;
+    cursor: pointer;
+}
+#nama {height: 30px;}
+
+/* ##################################################################################################### */
+/* media responsive */
+/* ##################################################################################################### */
+/* untuk mobile */
+@media only screen and (max-width:700px) {
+    .s1-container {
+        transform: translateY(-10px);
+        height: 97%;
+    }
+    .s1-container .profil {
+        padding-top: 15px;
+    }
+    .profil, .profil-image {
+        grid-column: span 2;
+        position: relative;
+        transform: translateY(-20px);
+    }
+    .s1-nav {display: none;}
+    .profil > h2 {height: auto; font-size: 1rem; padding-bottom: 25px; opacity: 100%;}
+    .profil > h4 {height: 120px; margin-bottom: 20px;}
+
+    /* section-2 */
+    .container {
+        grid-template-rows: repeat(2, 50%);
+        padding-top: 50px;
+    }
+    .s2-container .profil h4 {
+        font-size: 0.8rem;
+        transform: translateY(-85px);
+    }
+    .s2-container .profil h4 .hidden {display: none;}
+
+    /* section-3 */
+    .container-3 {
+        justify-content: center;
+    }
+    .wrapper {
+        width: 90%;
+        height: 100%;
+    }
+    .wrapper-box {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% auto auto auto;
+        overflow: hidden;
+        min-height: 100%;
+        max-height: 120%;
+    }
+    .wrapper-box h1 {font-size: 1rem;}
+    .wrapper-box h4 {font-size: 0.65rem;}
+
+    .s3-container .hidden {display: none;}
+
+    /* section-4 */
+    .card {
+        height: 70%;
+    }
+    .content p {
+        height: 70%;
+    }
+    .content i {
+        transform: translateY(-15px);
+    }
+
+    .s4-container .hidden {display: none;}
+    .s4-container .hidden-desktop {display: flex;}
+
+    /* scroll snap for project */
+    .container-3 {
+        padding-top: 50px;
+        scroll-padding-top: 50px;
+        scroll-snap-type: y mandatory;
+
+        /* border: 1px solid; */
+    }
+    .container-3 .card {
+        height: 70%;
+        margin-bottom: calc(15% + 15% + 50px);
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    /* section-5 */
+    .s5-container h2 {
+        font-size: 1.3rem;
+        padding-bottom: 5px;
+    }
+    .s5-container .profil-nav {
+        margin: 15px 0;
+    }
+    .s5-container .profil-nav ~ h4 {
+        font-size: 0.75rem;
+        margin: 3px 0;
+    }
+    .s5-container textarea, .s5-container button {
+        width: 100%;
+    }
+    .s5-container .profil-image {display: none;}
+}
+
+/* untuk dekstop */
+@media only screen and (min-width:701px) and (max-width:1300px) {
+    .content p {
+        height: 78%;
+    }
+
+    .card {
+        height: 550px;
+    }
+}
+
+/* gak penting*/
+@media only screen and (min-width:701px) {
+    .container {
+        width: 100%;
+    }
+}
+@media only screen and (min-height:1000px) {
+    main {
+        display: none;
+    }
+    body {
+        overflow: hidden;
+        padding: 50px 100px;
+        background: var(--bg-1);
+    }
+    #desktop-mobile {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        text-align: center;
+        color: var(--col-1);
+        margin: auto auto;
+
+    }
+    #desktop-mobile h1 {
+        width: 100%;
+        font-size: 2rem;
+        padding-bottom: 10px;
+        display: block;
+        border-bottom: 1px solid var(--col-1);
+    }
+    #desktop-mobile p {
+        font-size: 0.9rem;
+    }
+    #desktop-mobile a {
+        width: 100%;
+        font-size: 1.3rem;
+        color: black;
+        background: lavender;
+        border-radius: 30px;
+        padding: 5px 20px;
+    }
+    #desktop-mobile a:hover {
+        color: red;
+    }
+
+    main > section {
+        height: 100%;
+    }
+}
+
+/* ##################################################################################################### */
+/* tambahan */
+/* ##################################################################################################### */
+
+/* menhilangkan efek biru pada saat klik link di mobile */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-tap-highlight-color: transparent;
+}
+
+/* psudo */
+.card {
+    transform-origin: center center;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)
+}
+.card:hover {
+    transform: scale(0.9);
+    transform: scale(1.1);
+    /* margin-bottom: calc(15% + 15% + 50px + 50px); */
+}
+@media only screen and (max-width:700px) {
+    /* .card:first-child:hover + .card,
+    .card:nth-child(2) + .card,
+    .card:nth-child(3) + .card,
+    .card:nth-child(4) + .card {
+        transform: translateY(100px)
+    } */
+    .card:hover {
+        transform: scale(1);
+    }
+}
+
+.s5-container button {transition: all 0.3s ease;}
+.s5-container button:hover {
+    /* transform: scale(0.95); */
+    color: rgb(228, 20, 20);
+}
+
+.s4-container .content a{opacity: var(--op-2);}
+.s4-container .content a:hover {
+    opacity: var(--op-3);
+}
+/* gambar agar tidak gepeng */
+.profil-image img {object-fit: scale-down;}
+
+/* mencegah elemen di drag */
+img, div, * {
+    -webkit-user-drag: none;
+    /* user-drag: none; */
+    /* user-select: none; */
+}
+
+/* agar text tidak dapat di select */
+*:not(textarea)::selection {
+    background: transparent;
+    color: inherit;
+}
+
+/* menghilangkan outline text area */
+textarea, header {outline: none;}
+
+/* cursor */
+h1, h2, h3, h4, h5, h6, p, span {
+    cursor: default;
+}
+button, i, a {
+    cursor: pointer;
+}
+
+/* bayangan pada profil-image */
+/* .profil-image img {filter: drop-shadow(25px 10px 5px rgba(182, 40, 134, 0.692));} */
+
+/* ##################################################################################################### */
+/* border */
+/* ##################################################################################################### */
+/* h1, h2, h3, h4, h5, h6, p, div, a{border: 1px solid;} */
+
+.bottom {border: 1px solid red;height: 115px;width: 100%;position: fixed;bottom: 0px;display: flex;
+    display: none;
+}
